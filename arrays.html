@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        /*const aluno1 = "Aline";
+        const aluno2 = "Arthur";
+        const aluno3 = "Bárbara";
+        const aluno4 = "Aline";
+        const aluno5 = "Arthur";
+        const aluno6 = "Bárbara";
+
+        document.write(aluno1 + "<br>");
+        document.write(aluno2 + "<br>");
+        document.write(aluno3 + "<br>");*/
+        let nomeNovo = prompt("Antes de mostrar a lista, deseja colocar mais algum nome? Digite 1 para sim e 2 para não")
+
+        const alunos = ["Aline", "Arthur", "Bárbara", "Bruna Luise", "Bruna Torres", "Bruna Velôso", "Cauã", 
+        "Daniel", "Davi", "Gabriel", "Henrique"
+        ];
+        
+        if(nomeNovo == 1){
+            let resposta = prompt("Qual seria o nome?")
+            alunos.push(resposta)}
+        //alunos.push()
+
+        //document.write(alunos[3]);
+
+        for(let indice =0; indice <alunos.length; indice++){
+            document.write(alunos[indice] + "<br>");
+        }
+       
+
+    </script>
+</html>
+</body>
