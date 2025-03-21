@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <button type="button" onclick="adicionarAlunos()">Adicionar Alunos</button>
+    <br>
+    <output id="listaAlunos"></output>
+
+    <script>
+        // Função para adicionar um aluno
+        function adicionarAlunos() {
+            let nomeInf = prompt("Qual o seu nome?");
+            let idadeInf = prompt('Quantos anos você tem?');
+            let sesiInf = prompt('Qual é o seu SESI?');
+            let temPetInf = prompt('Digite 1 se você tem pet e 2 se você não tem.');
+            let temPet = temPetInf == 1; // Verificando se o usuário tem pet
+
+            let aluno = {
+                nome: nomeInf,
+                idade: idadeInf,
+                sesi: sesiInf,
+                temPet: temPet
+            };
+
+            // Adicionando o aluno ao array e exibindo os dados
+            alunos.push(aluno);
+            mostrarAlunos();
+            
+            let opcaoUsuario = confirm('Deseja Adicionar mais um aluno?');
+            if (opcaoUsuario) {
+                adicionarAlunos(); // Chamando a função recursivamente
+            }
+        }
+
+        // Função para mostrar a lista de alunos
+        function mostrarAlunos() {
+            let lista = document.getElementById('listaAlunos');
+            lista.innerHTML = ''; // Limpa a lista antes de atualizar
+
+            // Exibindo os alunos
+            for (let i = 0; i < alunos.length; i++) {
+                lista.innerHTML += `<p>O(a) aluno(a) ${alunos[i].nome} tem ${alunos[i].idade} anos e é do SESI ${alunos[i].sesi}. ${alunos[i].temPet ? "Tem pet." : "Não tem pet."}</p>`;
+            }
+        }
+
+        // Array para armazenar os alunos
+        let alunos = [];
+    </script>
+</body>
+</html>
