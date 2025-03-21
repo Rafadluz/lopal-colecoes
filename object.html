@@ -7,6 +7,7 @@
 </head>
 <body>
     <button type="button" onclick="adicionarAlunos()">Adicionar Alunos</button>
+    <button type="button" onclick="removerAluno()">Remover Aluno</button>
     <br>
     <output id="listaAlunos"></output>
 
@@ -35,6 +36,19 @@
                 adicionarAlunos(); // Chamando a função recursivamente
             }
         }
+
+        function removerAluno () {
+            let alunoRemovido = prompt('Deseja remover um aluno?:');
+            alunos.pop(alunoRemovido);
+
+            opcaoUsuario = confirm('Deseja remover mais um aluno?');
+
+            while(opcaoUsuario) {
+                removerAluno();
+            }
+            mostrarAlunos();
+
+}
 
         // Função para mostrar a lista de alunos
         function mostrarAlunos() {
